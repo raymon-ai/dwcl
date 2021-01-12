@@ -1,0 +1,7 @@
+include dwcl/dwcl.min.js
+include dwcl/dwcl.min.js.map
+include dwcl/metadata.json
+include dwcl/package-info.json
+include README.md
+include LICENSE
+include package.json
