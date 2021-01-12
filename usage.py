@@ -1,24 +1,34 @@
-import dwcl
+#%%
 import dash
-from dash.dependencies import Input, Output
 import dash_html_components as html
+from dash.dependencies import Input, Output
+from dwcl import DashWindowCloseListener
+from flask import request
+from plotly import graph_objects as go
 
-app = dash.Dash(__name__)
-
-app.layout = html.Div([
-    dwcl.DashWindowCloseListener(
-        id='input',
-        value='my-value',
-        label='my-label'
-    ),
-    html.Div(id='output')
-])
-
-
-@app.callback(Output('output', 'children'), [Input('input', 'value')])
-def display_output(value):
-    return 'You have entered {}'.format(value)
+app = dash.Dash()
+app.title = "Demo"
+app.layout = html.Div(
+    children=[
+        DashWindowCloseListener(id="my-closed-listener"),
+        html.Span(id="page-listener-dummy"),
+        html.Div("your content"),
+    ],
+)
 
 
-if __name__ == '__main__':
+@app.callback(
+    Output("page-listener-dummy", "children"), [Input("my-closed-listener", "status")]
+)
+def detect_close(status):
+    print(f"Status: {status}")
+    if status is None or status == "mounted":
+        return None
+    func = request.environ.get("werkzeug.server.shutdown")
+    if func is None:
+        raise RuntimeError("Not running with the Werkzeug Server")
+    func()
+
+
+if __name__ == "__main__":
     app.run_server(debug=True)

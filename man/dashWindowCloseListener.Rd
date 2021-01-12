@@ -10,15 +10,13 @@ ExampleComponent is an example component. It takes a property, `label`, and disp
 }
 
 \usage{
-dashWindowCloseListener(id=NULL, label=NULL, value=NULL)
+dashWindowCloseListener(id=NULL, status=NULL)
 }
 
 \arguments{
 \item{id}{Character. The ID used to identify this component in Dash callbacks.}
 
-\item{label}{Character. A label that will be printed when this component is rendered.}
-
-\item{value}{Character. The value displayed in the input.}
+\item{status}{Character. The status of the window. Mounted or closing.}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

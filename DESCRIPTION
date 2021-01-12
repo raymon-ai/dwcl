@@ -1,7 +1,7 @@
 Package: dwcl
-Title: A Dash Component that catches a the window close event and updates it's status. This can be used to stop the Dash server when the user closes his window, which is useful when using Dash in interactive apps.
-Version: 0.0.1
-Description: A Dash Component that catches a the window close event and updates it's status. This can be used to stop the Dash server when the user closes his window, which is useful when using Dash in interactive apps.
+Title: A Dash Component that catches a the window close event and updates it's status. This can be used to stop the Dash server when the user closes his window, which is useful when using Dash apps as part of a multi step a workflow.
+Version: 1.0.1
+Description: A Dash Component that catches a the window close event and updates it's status. This can be used to stop the Dash server when the user closes his window, which is useful when using Dash apps as part of a multi step a workflow.
 Depends: R (>= 3.0.2)
 Imports: 
 Suggests: 

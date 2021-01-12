@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-dashWindowCloseListener <- function(id=NULL, label=NULL, value=NULL) {
+dashWindowCloseListener <- function(id=NULL, status=NULL) {
     
-    props <- list(id=id, label=label, value=value)
+    props <- list(id=id, status=status)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@ dashWindowCloseListener <- function(id=NULL, label=NULL, value=NULL) {
         props = props,
         type = 'DashWindowCloseListener',
         namespace = 'dwcl',
-        propNames = c('id', 'label', 'value'),
+        propNames = c('id', 'status'),
         package = 'dwcl'
         )
 
